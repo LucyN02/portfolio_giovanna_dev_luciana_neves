@@ -1,0 +1,372 @@
+:root {
+    --primary-purple: #8A2BE2; /* Um tom de roxo como exemplo */
+    --dark-bg: #1A1A1A; 
+}
+
+/* --- Estilos Gerais e Navbar --- */
+html {
+    scroll-behavior: smooth; /* Permite a rolagem suave ao clicar nos links da navbar */
+    scroll-padding-top: 70px; /* Compensa a altura da navbar fixa para não cobrir o título */
+}
+
+/* Navbar customizada (opcional) */
+.navbar {
+    background-color: #315818; /* Um tom de preto/cinza escuro elegante */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #315818 !important; /* Cor de destaque ao passar o mouse */
+}
+
+/* --- Estilos da Seção Inicial (Header/Hero) --- */
+
+/* --- Estilos do Cabeçalho GIOVANNA 2025 NATHANY --- */
+
+.top-info-bar {
+    /* Posiciona no topo do container, acima da imagem de fundo */
+    top: 0;
+    left: 0;
+    z-index: 20; /* Garante que fique acima de tudo, inclusive da navbar (se a navbar não for fixed) */
+
+    
+    /* Configura o fundo para simular a área branca que está atrás do texto na imagem */
+    /* Na imagem original, parece haver um fundo branco/cinza muito claro no topo */
+    color: #000; /* Texto em preto para contraste com o fundo claro */
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    
+    /* Na imagem, as laterais parecem estar dentro de um container, não full width */
+    max-width: 1320px; /* Alinha com o max-width padrão de containers grandes */
+    margin: 0 auto;
+}
+
+/* Se a Navbar já estiver sendo usada, ajuste o padding-top da seção Hero */
+.hero-section {
+    /* Remova o padding-top: 56px; que havíamos adicionado e confie no novo elemento */
+    height: 90vh; 
+    overflow: hidden; 
+    background-color: #000;
+}
+
+/* No seu Hero Content Box (bloco verde), o topo é 'BEM VINDO AO MEU', então o GIOVANNA/2025/NATHANY fica acima de tudo */
+
+/* 1. Configuração da Seção */
+.hero-section {
+    /* Altura da tela (ajuste 100vh para 90vh para deixar espaço para o topo da página) */
+    height: 90vh; 
+    padding-top: 56px; /* Para descer o conteúdo e evitar a Navbar fixa */
+    overflow: hidden; /* Importante para que a inclinação não cause barras de rolagem desnecessárias */
+    background-color: #36443f70;
+}
+
+/* 3. Camada de Conteúdo (Posiciona o Card no centro) */
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Centraliza o card no meio da tela */
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+}
+
+/* 4. O Card Inclinado (Bloco Verde) */
+.card-content-box {
+    width: 700px; /* Largura fixa (ajuste conforme seu gosto) */
+    height: 450px; /* Altura fixa */
+    
+    background-color: #315818; /* Cor da folha de trás */
+    /* Adicione um fundo falso atrás para simular a folha branca (como na imagem) */
+    position: relative;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Efeito da folha branca atrás (simulando a folha branca inclinada) */
+.card-content-box::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0; /* Cor da folha de trás */
+    transform: rotate(-8deg); /* Inclinado para o outro lado */
+    top: -5px; /* Posição da sombra/folha */
+    left: -50px;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 5. Cores e Fontes */
+.bg-green {
+    /* Cor verde-militar escura da imagem */
+    background-color: #386641 !important; 
+}
+
+.hero-title {
+    /* Ajusta o tamanho da fonte e a altura da linha para o "PORTFÓLIO" */
+    font-size: 5rem;
+    line-height: 0.8;
+}
+
+/* --- Estilos da Seção Sobre Mim / Skills --- */
+
+.skills-section {
+    background-color: #1a1a1a !important; /* Fundo preto/cinza escuro */
+    padding-top: 100px; /* Espaçamento extra no topo */
+}
+
+/* 1. O Papel Inclinado */
+.about-me-paper {
+    /* Define o contexto de posição para o Snoopy */
+    height: 100%; 
+}
+
+.paper-box {
+    /* A cor da borda tracejada na imagem parece ser branca ou cinza claro */
+    border: 2px dashed #999; 
+    /* CHAVE PARA A INCLINAÇÃO */
+    transform: rotate(-3deg); 
+    width: 90%;
+    margin-left: auto; /* Alinha o papel para a direita dentro da coluna */
+}
+
+/* O fundo com destaque roxo */
+.paper-box strong {
+    padding: 2px 5px;
+    line-height: 1.5;
+    /* Certifique-se que esta cor roxa seja a mesma usada nos posters */
+    background-color: #9370DB; 
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 2. Imagem Decorativa (Snoopy) */
+.snoopy-image {
+    position: absolute;
+    top: -80px; /* Move para cima do papel */
+    right: 0px; /* Posiciona à direita do papel */
+    width: 150px; /* Ajuste o tamanho da imagem */
+    z-index: 1;
+}
+
+/* 3. Estilo das Listas de Habilidades */
+.skill-title {
+    /* Fonte das Hard/Soft Skills é bem grande e ousada */
+    font-size: 2rem; 
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.skill-list li {
+    font-size: 1rem;
+    line-height: 1.8;
+    /* Espaçamento entre as linhas para replicar o design */
+}
+
+/* Ajuste de Responsividade */
+@media (max-width: 991px) {
+    .paper-box {
+        transform: rotate(0deg); /* Remove a inclinação no mobile */
+        width: 100%;
+        margin: 0;
+    }
+    
+    .snoopy-image {
+        /* Move a imagem do Snoopy para cima e centralizada no mobile */
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+    }
+
+    .skill-lists {
+        padding-top: 40px; /* Adiciona espaço entre o texto e as skills no mobile */
+    }
+
+    .card-content-box {
+        width: 90vw; /* Ocupa 90% da largura da tela */
+        height: auto; /* Altura automática */
+        padding: 20px !important;
+        transform: rotate(0deg); /* Remove a inclinação no mobile */
+    }
+    
+    .card-content-box::before {
+        display: none; /* Remove a sombra/folha de trás no mobile */
+    }
+
+    .hero-title {
+        font-size: 3rem; /* Diminui a fonte no mobile */
+    }
+}
+
+/* --- Estilos da Seção Social Mídia --- */
+.social-midia-section {
+    background-color: #f8f9fa; /* Fundo claro conforme a imagem */
+}
+
+.custom-font-social {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fonte limpa */
+    letter-spacing: -1px;
+    color: #000;
+}
+
+/* Ajuste para os cards de social media */
+.social-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden; /* Garante que a imagem não vaze se dermos zoom */
+}
+
+.social-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Utilitário para garantir que todas as imagens preencham o card igualmente */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Classe específica para a imagem em preto e branco (Item 3) */
+.grayscale-img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+/* Opcional: Colorir a imagem PB ao passar o mouse */
+.social-card:hover .grayscale-img {
+    filter: grayscale(0%);
+}
+
+/* Estilo para a seção de posters */
+.posters-section {
+    background-color: var(--dark-bg) !important;
+}
+
+.poster-card {
+    /* Estilos para bordas e efeitos de cor */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Adicione mais estilos aqui para replicar o design visual */
+}
+
+.custom-font-about-me {
+    font-family: 'Sua Fonte Cursiva', cursive; /* Substitua pela fonte real */
+    font-size: 4rem; /* Ajuste o tamanho */
+}
+
+/* Para o título "Projetos" com fonte customizada */
+.custom-font-projects {
+    font-family: 'Sua Fonte Cursiva', cursive; /* Substitua pela fonte real */
+    font-size: 4rem; /* Ajuste o tamanho */
+}
+
+/* Estilo para a rolagem horizontal suave na seção Projetos */
+.overflow-auto::-webkit-scrollbar {
+    display: none; /* Opcional: esconder a barra de rolagem */
+}
+.overflow-auto {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Posicionamento e Estilo das Setas */
+.projetos-section {
+    /* Necessário para posicionar as setas de forma absoluta em relação à seção */
+    position: relative; 
+}
+
+.custom-prev-btn,
+.custom-next-btn {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino */
+    z-index: 10;
+    opacity: 0.8; /* Transparência para parecer mais leve */
+    border-radius: 50%; /* Deixa o botão redondo */
+    padding: 10px;
+}
+
+.custom-prev-btn {
+    left: 10px; /* Distância da esquerda */
+}
+
+.custom-next-btn {
+    right: 10px; /* Distância da direita */
+}
+
+/* Opcional: Estilo para esconder a barra de rolagem */
+.custom-scroll-area {
+    /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+.custom-scroll-area::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* CSS para garantir que cada item ocupe menos de 1/3 da tela em telas grandes */
+.project-item {
+    /* min-width: 28% garante 3.5 itens visíveis */
+    min-width: 28%; 
+    max-width: 28%;
+}
+
+/* Em telas de celular (até 576px), mostra apenas 1.5 itens por vez */
+@media (max-width: 576px) {
+    .project-item {
+        min-width: 60%; /* Mostra 1 item inteiro e metade do próximo */
+        max-width: 60%;
+    }
+}
+
+/* Em tablets (entre 577px e 992px), mostra 2.5 itens por vez */
+@media (min-width: 577px) and (max-width: 991px) {
+    .project-item {
+        min-width: 40%;
+        max-width: 40%;
+    }
+}
+
+/* --- Estilos da Seção Social Mídia --- */
+
+.social-midia-section {
+    /* Cor de fundo base (cinza claro/texturizado) */
+    background-color: #f0f0f0; 
+    overflow: hidden;
+}
+
+/* Opcional: Se você tiver uma imagem de textura de ruído como na foto */
+.bg-texture-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; /* Deixa a textura sutil */
+    z-index: 0;
+}
+
+.custom-font-social {
+    /* Fonte sem serifa, forte e limpa */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: -1px; /* Aproxima um pouco as letras */
+    color: #000;
+}
+
+/* Efeito ao passar o mouse nas imagens (opcional, mas fica elegante) */
+.social-card.hover-effect img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.social-card.hover-effect:hover img {
+    transform: translateY(-5px); /* Levanta levemente a imagem */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important; /* Aumenta a sombra */
+}
+
+
